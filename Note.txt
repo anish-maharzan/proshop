@@ -43,3 +43,8 @@ Section 4: Starting MongoDB & Mongoose
 - Create folder models-> productModel.js
                       -> userModel.js   
                       -> orderModel.js
+
+21. Prepare Sample Data
+- delete _id field from products.js
+- npm i bcryptjs
+- create file users.js and prepare sample data
