@@ -155,3 +155,6 @@ Section 4: Starting MongoDB & Mongoose
 - overwrite express default error handler 
 - create file in middleware > errorMiddleware.js
 - create notFound & errorHandler middlewares
+
+26. Product controllers
+- create controller for each route for business logic code
