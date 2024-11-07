@@ -149,3 +149,9 @@ Section 4: Starting MongoDB & Mongoose
 - use async handler for elegant error handling (instead of using try catch block)
 - use own custom error handler instead of using third party package
 - create middleware folder > asyncHandler.js
+
+25. Custom Error middleware
+- express has default error handler
+- overwrite express default error handler 
+- create file in middleware > errorMiddleware.js
+- create notFound & errorHandler middlewares
