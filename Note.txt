@@ -1,17 +1,93 @@
+Section 1: Introduction
+
+1. Welcome to the course
+
+2. Course Project Intro
+
+3. Course Code Repo
+
+4. Getting Setup
+- vs code
+- git/ github
+- nodejs
+- postman
+- react developer tools (chrome)
+- redux devtools (chrome)
+- vscode extensions
+	- ES7+React/Redux/React-Native snippets
+	- Prettier
+	- Javascript (ES6) code snippets
+	- Github copilot
+	- Github theme
+	- vscode-icons
+
+------------------------------------------------------
+
+Section 2: Starting The Front End
+
+5. React setup & Git Initialize
+- vite
+- create-react-app
+
+File structure
+  frontend - react UI  & all frontend dependencies (Redux, Bootstrap etc.)
+  backend - server-side code, models, controllers & routes
+  uploads - image uploads
+  node_modules - server dependencies (express, mongoose etc)
+  package.json - server package.json
+  .env - environment variables, mongoDB URI, JWT secret etc.
+  .git
+  .gitignore
+
+npx create-react-app frontend
+npm start
+
+Steps
+-delete files
+  - App.css
+  - logo.svg
+  - App.test.js
+
+6. Header & Footer component
+- npm i react-bootstrap bootstrap react-icons (frontend)
+- index.js > import 'bootstrap/dist/css/bootstrap.min.css
+- import bootstrap in index.js file before importing './index.css' 
+
+7. Custom Bootstrap theme
+
+8. List Products
+
+9. Implement React Router
+- npm i react-router-dom
+- put route in index.js file
+- npm i react-router-bootstrap (LinkContainer)
+- Router avoid calling to server, so faster loading (no spinning)
+
+10. Rating component
+
+11. Product Detail page 
+- screens -> ProductScreen.js
+- import {useParams} from 'react-router-dom'
+
+---------------------------------------------------------
+
+Section 3: Serving & Fetching Data
+
+12. Full Stack Workflow & Explanation
+
 13. Express Server & Initial Product Routes
 - npm init (create package.json)
-- package.json-> "type": "module" (nodejs commonjs module by default, instead use es module)
+- package.json-> "type": "module" (nodejs uses 'commonjs' module by default, instead use es module)
 - package.json->"scripts": { "start": "node backend/server.js"}
 - npm install express
-- json formatter(useful chrome extension)
-
+- json formatter (useful chrome extension)
 
 14. Nodemon & Concurrently
 - npm install -D nodemon concurrently (root folder)
-- add scripts ("server": "nodemon backend/server.js")
+- add scripts 
+                "server": "nodemon backend/server.js"
                 "client": "npm start -prefix frontend"
                 "dev": "concurrently \"npm run server\" \"npm run client\"" 
-
 
 15. Envirnoment Variables
 - npm i -D dotenv (root)
@@ -22,29 +98,54 @@
 - add the proxy (package.json-> "proxy": "http://localhost:5000")
 - use useEffect hooks to fetch data
 
+-------------------------------------------------------------
+
 Section 4: Starting MongoDB & Mongoose
+
 17. MongoDB Atlas Setup
 - Signup MongoDB
-- Create Organization-> Create Project-> 
-  Create a Database (Username & Password, Add My IP Address)-> 
-  Connect to Cluster0(Copy Connect to application) and put that into .env as MONGO_URI->
-  Browse collection-> Add My Own data-> Create Database(proshop & products)
+- Create Organization 
+  Create Project
+  Create a Database (Username & Password, Add My IP Address) 
+  Connect to Cluster0 (Copy Connect to application) and put that into .env as MONGO_URI
+  Browse collection
+  Add My Own data
+  Create Database (proshop & products)
+
 - create example.env and put actual variable without value and push to repo
 
 18. MongoDB Compass Setup
 - Desktop application
 
 19. Connect with Mongoose
--  npm i mongoose (root)
+- npm i mongoose (root)
 - create folder config-> db.js
 
-
 20. Modeling Our Data
-- Create folder models-> productModel.js
-                      -> userModel.js   
-                      -> orderModel.js
+- Create folder models -> productModel.js
+                       -> userModel.js   
+                       -> orderModel.js
 
 21. Prepare Sample Data
 - delete _id field from products.js
 - npm i bcryptjs
-- create file users.js and prepare sample data
+- create file users.js (data) and prepare sample data
+
+22. Seeding sample data
+- npm i colors
+- seeder.js (backend) and create script for import and destroy.
+- process.argv is used to get argument of commandline 
+- create script in package.json to import and destroy 
+
+23. Getting started with Postman
+- signin to Postman
+- create environment variables (baseURL)
+- create API
+- create collection-> products-> add requests (Get All Products({{baseURL}}/products))
+
+24. Get Products From Database
+- move routes from server.js to seperate files
+- create routes folder (backend) > ProductRoutes.js
+- use async handler for elegant error handling (instead of using try catch block)
+- use own custom error handler instead of using third party package
+- create middleware folder > asyncHandler.js
