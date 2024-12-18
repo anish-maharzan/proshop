@@ -159,6 +159,8 @@ Section 4: Starting MongoDB & Mongoose
 - create controller for each route for business logic code
 - create controllers > productController.js (backend)
 
+---------------------------------------------------------------------------------------------------------------
+
 Section 5: Redux Toolkit Setup & State Management
 
 27. Redux & State Overview
@@ -198,3 +200,7 @@ Section 5: Redux Toolkit Setup & State Management
 - export query, convention: use as prefix and Query as suffix
 - when you have proxy set up, no need to dd CORS in server, base url is also not required
 - no reducer required
+
+30. Get Product Details Endpoint
+- Add new query in productsApiSlice
+- Remove axios, useEffect, component state, import useGetProductDetailsQuery in productScreen
