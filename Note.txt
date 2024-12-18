@@ -189,3 +189,12 @@ Section 5: Redux Toolkit Setup & State Management
 - CreateSlice regular slice for asynchronous request. use createApi for backend api, 
   fetchBaseQuery (function allow to request backend api)
 - import apiSlice in store.js
+
+29. Products API Slice & Get Products Endpoint 
+- create productsApiSlice
+- apiSlice is like base/ parent
+- we don't need to do fetch request/ axios, it can be done by using redux toolkit.
+- we cached the result as well using keepUnusedDataFor property
+- export query, convention: use as prefix and Query as suffix
+- when you have proxy set up, no need to dd CORS in server, base url is also not required
+- no reducer required
