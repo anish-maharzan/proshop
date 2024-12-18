@@ -43,7 +43,7 @@ npx create-react-app frontend
 npm start
 
 Steps
--delete files
+- delete files
   - App.css
   - logo.svg
   - App.test.js
@@ -51,7 +51,6 @@ Steps
 6. Header & Footer component
 - npm i react-bootstrap bootstrap react-icons (frontend)
 - index.js > import 'bootstrap/dist/css/bootstrap.min.css
-- import bootstrap in index.js file before importing './index.css' 
 
 7. Custom Bootstrap theme
 
@@ -158,3 +157,35 @@ Section 4: Starting MongoDB & Mongoose
 
 26. Product controllers
 - create controller for each route for business logic code
+- create controllers > productController.js (backend)
+
+Section 5: Redux Toolkit Setup & State Management
+
+27. Redux & State Overview
+- Redux - popular javascript library to managing state
+- State - component level state - useState()
+- App/ Global state - state distributed to multiple component
+- State management refer to the way that manage the data that application need to keep track of
+- redux store/ action/ reducers
+- state is at app level, updated through action, dispatch to reducer function, updated state is 
+  pass to any component that uses that state
+- redux diagrams 
+- View -----------------> Actions
+   ^                          |
+   |                          | Reducer functions
+   |_________State____________|
+
+- redux.js.org
+- redux-toolkit.js.org
+
+28. Redux Store & API Slice
+- npm i @reduxjs/toolkit react-redux (frontend)
+- create store-> store.js
+- index.js (entry point of react) surround react router with react redux provider
+- src-> constants.js
+- create slices (way to organize your states)/ collection of reducers and action related to each other
+  multiple slices in application and each slice has it's own state
+- create folder slices-> apiSlice.js (rootApiSlice (base api slice), extends it by productApiSlice, orderApiSlice)
+- CreateSlice regular slice for asynchronous request. use createApi for backend api, 
+  fetchBaseQuery (function allow to request backend api)
+- import apiSlice in store.js
