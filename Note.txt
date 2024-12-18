@@ -204,3 +204,8 @@ Section 5: Redux Toolkit Setup & State Management
 30. Get Product Details Endpoint
 - Add new query in productsApiSlice
 - Remove axios, useEffect, component state, import useGetProductDetailsQuery in productScreen
+
+31. Loader & message components
+- add Loader.jsx component
+- replace Loadin... but Loader component
+- add message componet
